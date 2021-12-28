@@ -42,6 +42,18 @@ cursor.execute("""CREATE TABLE IF NOT EXISTS "vacinacao" (
                 FOREIGN KEY("NUS") REFERENCES "utentes"("NUS")
             );""")
 
+# Criação da tabela de certificados
+cursor.execute("""CREATE TABLE IF NOT EXISTS "certificados" (
+                "id"	INTEGER NOT NULL UNIQUE,
+                "NUS"	INTEGER,
+                "quantidade_vacina"	INTEGER,
+                "ultimo_teste"	INTEGER,
+                PRIMARY KEY("id" AUTOINCREMENT),
+                FOREIGN KEY("NUS") REFERENCES "utentes"("NUS"),
+                FOREIGN KEY("ultimo_teste") REFERENCES "testes"("id")
+            );""")
+
+
 # Criação da tabela de log
 cursor.execute("""CREATE TABLE IF NOT EXISTS "log" (
                 "id" INTEGER NOT NULL UNIQUE,

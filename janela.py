@@ -5,6 +5,7 @@
 ## https://build-system.fman.io/qt-designer-download
 
 # Após a geração do arquivo.ui insira o mesmo na pasta do projeto
+## O pyuic5 deve ser executado no PC e não no ambiente virtual
 ## Abra o terminal e digite "pyuic5 arquivo.ui -o arquivo.py"
 
 import sys
